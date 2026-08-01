@@ -130,8 +130,8 @@ export default function Home() {
       </section>
 
       <section className="itqan shell" id="about">
-        <div className="itqan-word" aria-hidden="true">إتقان</div>
-        <div className="itqan-copy"><p className="section-label">Our philosophy</p><h2>Build with Itqan.</h2><p>Care, excellence, and purpose in every decision. We favor long-term usefulness over short-term hype—and build systems we would trust our own businesses to depend on.</p></div>
+        <div className="itqan-word" aria-hidden="true">PASSION</div>
+        <div className="itqan-copy"><p className="section-label">Our philosophy</p><h2>Build with passion.</h2><p>Care, excellence, and purpose in every decision. We favor long-term usefulness over short-term hype—and build systems we would trust our own businesses to depend on.</p></div>
       </section>
 
       <section className="future">
