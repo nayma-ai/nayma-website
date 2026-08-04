@@ -3,9 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(
-    process.env.GITHUB_ACTIONS
-      ? "https://nayma-ai.github.io/nayma-website"
-      : "http://localhost:3000",
+    process.env.GITHUB_ACTIONS ? "https://nayma.ai" : "http://localhost:3000",
   ),
   title: "NAYMA — Technology, thoughtfully built.",
   description:
