@@ -1,3 +1,5 @@
+import { SiteFooter, SiteHeader } from "./components/site-chrome";
+
 const products = [
   {
     key: "wasl",
@@ -73,13 +75,7 @@ function ProductVisual({ type }: { type: string }) {
 export default function Home() {
   return (
     <main>
-      <nav className="nav shell" aria-label="Primary navigation">
-        <a href="#top" className="brand" aria-label="NAYMA home">NAYMA<span className="brand-dot">.</span></a>
-        <div className="nav-links">
-          <a href="#products">Products</a><a href="#approach">Approach</a><a href="#about">About</a>
-        </div>
-        <a className="nav-cta" href="#contact">Talk to us <span>↗</span></a>
-      </nav>
+      <SiteHeader />
 
       <section className="hero shell" id="top">
         <div className="hero-kicker"><span>Independent product company</span><span>Saudi Arabia · India · Global</span></div>
@@ -142,11 +138,7 @@ export default function Home() {
         <p className="section-label">Early access</p><div className="contact-grid"><h2>Build what comes<br /><em>next,</em> with us.</h2><div><p>We are introducing NAYMA products to a limited number of early customers. Tell us which problem you are ready to solve.</p><a href="mailto:hello@nayma.ai" className="button">Start a conversation <span>↗</span></a></div></div>
       </section>
 
-      <footer className="footer shell">
-        <div><a href="#top" className="brand">NAYMA<span className="brand-dot">.</span></a><p>Technology, thoughtfully built.</p></div>
-        <div className="footer-links"><div><span>Products</span><a href="#wasl">WASL</a><a href="#relaya">Relaya</a><a href="#qayro">Qayro</a></div><div><span>Company</span><a href="#about">About</a><a href="mailto:hello@nayma.ai">Contact</a><a href="#contact">Early access</a></div></div>
-        <p className="copyright">© {new Date().getFullYear()} NAYMA. All rights reserved.</p>
-      </footer>
+      <SiteFooter />
     </main>
   );
 }

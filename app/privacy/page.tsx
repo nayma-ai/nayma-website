@@ -1,0 +1,7 @@
+import { PageIntro, SiteFooter, SiteHeader } from "../components/site-chrome";
+
+export default function PrivacyPage() {
+  return <main><SiteHeader /><PageIntro eyebrow="Legal" title={<>Privacy<br /><em>policy.</em></>}>Last updated: August 4, 2026. We believe privacy is part of building technology thoughtfully.</PageIntro><LegalContent sections={[["Information we collect", "When you contact us, we may collect the information you choose to share, such as your name, email address, company, and message. We may also collect limited technical information needed to operate and secure this website."], ["How we use information", "We use information to respond to enquiries, provide and improve our products, maintain the security of our services, and meet legal obligations. We do not sell personal information."], ["Sharing and retention", "We share information only with service providers that help us operate our business, when required by law, or with your direction. We retain information only for as long as reasonably necessary for these purposes."], ["Your choices", "You may ask us to access, correct, or delete personal information we hold about you, subject to applicable law. Contact hello@nayma.ai to make a request."]]} /><SiteFooter /></main>;
+}
+
+function LegalContent({ sections }: { sections: [string, string][] }) { return <section className="legal shell">{sections.map(([title, copy], index) => <article key={title}><span>0{index + 1}</span><div><h2>{title}</h2><p>{copy}</p></div></article>)}</section>; }
