@@ -1,10 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // GitHub Pages serves project sites below the repository name. This keeps
-  // links and assets working both locally and at /nayma-website in production.
+  // nayma.ai is a GitHub Pages custom domain, so it serves this site at the
+  // domain root rather than below the repository name.
   output: "export",
-  basePath: process.env.GITHUB_ACTIONS ? "/nayma-website" : "",
   images: {
     unoptimized: true,
   },
