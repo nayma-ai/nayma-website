@@ -50,10 +50,34 @@ const products = [
     audience: "Finance, procurement & shared services",
     actions: [{ label: "Request Qayro early access", href: "/contact" }],
   },
+  {
+    key: "nida",
+    number: "04",
+    name: "NIDA",
+    eyebrow: "Developer infrastructure · Transactional communications",
+    headline: "Transactional email today. Unified communications tomorrow.",
+    description:
+      "A developer-first communications platform—typed SDKs, webhooks, and delivery visibility built for teams shipping product, not managing mail infrastructure.",
+    capabilities: ["Transactional Email", "Delivery Events", "Webhooks", "SDK & CLI"],
+    audience: "Product & platform engineering teams",
+    actions: [{ label: "Request Nida early access", href: "/contact" }],
+  },
+  {
+    key: "rolwise",
+    number: "05",
+    name: "ROLWISE",
+    eyebrow: "AI-native hiring platform",
+    headline: "Hiring pipelines that source, screen, and move on their own.",
+    description:
+      "An AI agentic hiring suite that sources candidates, scores fit, and runs outreach and screening across the pipeline—so recruiting teams focus on decisions, not busywork.",
+    capabilities: ["Candidate Sourcing", "AI Fit Scoring", "Outreach Agents", "Pipeline Automation"],
+    audience: "Talent, recruiting & hiring teams",
+    actions: [{ label: "Visit Rolwise", href: "https://rolwise.com", external: true }],
+  },
 ];
 
 const principles = [
-  ["Built in Saudi Arabia", "An independent product company built from Saudi Arabia and India for teams operating across regions."],
+  ["Independently built", "An independent product company building for teams operating across regions, globally."],
   ["Enterprise-first", "Security, governance, integration, and deployment control are product foundations—not later additions."],
   ["API-first", "Clear interfaces help every product fit the systems an organization already depends on."],
   ["AI-native", "AI is applied where it can reason over context and reduce operational work, with evidence and human control."],
@@ -85,6 +109,8 @@ const useCases = [
   ["Platform teams", "Govern API, AI, event, and worker traffic through one control plane.", "WASL"],
   ["Revenue teams", "Turn customer conversations into shared context and next actions.", "RELAYA"],
   ["Finance & procurement", "Move invoices and approvals through governed automation.", "QAYRO"],
+  ["Product & engineering teams", "Send transactional email with typed SDKs and delivery visibility.", "NIDA"],
+  ["Talent & recruiting teams", "Source, score, and move candidates with AI agents in the loop.", "ROLWISE"],
 ];
 
 function ProductVisual({ type }: { type: string }) {
@@ -111,6 +137,20 @@ function ProductVisual({ type }: { type: string }) {
           <span className="visual-label">3-WAY MATCH</span>
         </>
       )}
+      {type === "nida" && (
+        <>
+          <span className="envelope e1" /><span className="envelope e2" /><span className="envelope e3" />
+          <span className="signal-pulse" />
+          <span className="visual-label">SEND → DELIVER → CONFIRM</span>
+        </>
+      )}
+      {type === "rolwise" && (
+        <>
+          <span className="candidate c1">A+</span><span className="candidate c2">B</span><span className="candidate c3">A</span>
+          <span className="pipeline-track" />
+          <span className="visual-label">SOURCE → SCORE → HIRE</span>
+        </>
+      )}
     </div>
   );
 }
@@ -129,7 +169,7 @@ export default function Home() {
       <SiteHeader />
 
       <section className="hero shell" id="top">
-        <div className="hero-kicker"><span>Independent enterprise software company</span><span>Saudi Arabia · India · Global</span></div>
+        <div className="hero-kicker"><span>Independent enterprise software company</span><span>Global</span></div>
         <div className="hero-title-wrap">
           <h1>NAYMA builds<br /><em>enterprise AI</em> systems.</h1>
           <div className="hero-mark" aria-hidden="true"><span /><span /><span /></div>
@@ -141,7 +181,7 @@ export default function Home() {
             <a href="#products" className="text-link">Explore products <span>↓</span></a>
           </div>
           <div className="credibility-rail" aria-label="NAYMA commitments">
-            <span>Built in Saudi Arabia</span><span>Enterprise-first</span><span>API-first</span><span>AI-native</span><span>Privacy-first</span>
+            <span>Independently built</span><span>Enterprise-first</span><span>API-first</span><span>AI-native</span><span>Privacy-first</span>
           </div>
         </div>
       </section>
@@ -155,7 +195,7 @@ export default function Home() {
       </section>
 
       <section className="products shell" id="products">
-        <div className="section-head"><p className="section-label">Three enterprise products</p><p>One shared engineering foundation.</p></div>
+        <div className="section-head"><p className="section-label">Five enterprise products</p><p>One shared engineering foundation.</p></div>
         {products.map((product) => (
           <article className={`product product-${product.key}`} id={product.key} key={product.key}>
             <div className="product-meta"><span>{product.number}</span><p>{product.eyebrow}</p></div>
