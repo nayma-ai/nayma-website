@@ -16,7 +16,7 @@ export function SiteHeader() {
 export function SiteFooter() {
   return (
     <footer className="footer shell">
-      <div><Link href="/" className="brand">NAYMA<span className="brand-dot">.</span></Link><p>Technology, thoughtfully built.</p></div>
+      <div><Link href="/" className="brand">NAYMA<span className="brand-dot">.</span></Link><p>Technology, thoughtfully built.</p><address>#7, 15th Floor, Aurora Waterfront<br />GN 34/1, GN Block, Salt Lake, Sector 5<br />Kolkata, India</address></div>
       <div className="footer-links">
         <div><span>Explore</span><Link href="/roadmap">Product roadmap</Link><Link href="/careers">Careers</Link><Link href="/contact">Contact</Link></div>
         <div><span>Connect</span><a href="https://www.linkedin.com/company/nayma-ai/about" target="_blank" rel="noreferrer">LinkedIn</a><a href="https://github.com/orgs/nayma-ai/dashboard" target="_blank" rel="noreferrer">GitHub</a><a href="https://x.com/nayma_ai" target="_blank" rel="noreferrer">X · @nayma_ai</a></div>
