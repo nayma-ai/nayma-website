@@ -60,7 +60,7 @@ const products = [
       "A developer-first communications platform—typed SDKs, webhooks, and delivery visibility built for teams shipping product, not managing mail infrastructure.",
     capabilities: ["Transactional Email", "Delivery Events", "Webhooks", "SDK & CLI"],
     audience: "Product & platform engineering teams",
-    actions: [{ label: "Request Nida early access", href: "/contact" }],
+    actions: [{ label: "Visit Nida", href: "https://nida.to", external: true }],
   },
   {
     key: "rolwise",
