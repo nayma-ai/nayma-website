@@ -13,11 +13,10 @@ export const metadata: Metadata = {
     "NAYMA builds enterprise infrastructure and AI-native software for governing traffic, understanding relationships, and automating operations.",
   icons: {
     icon: [
-      { url: "/favicon.svg", type: "image/svg+xml" },
       { url: "/icon-256.png", sizes: "256x256", type: "image/png" },
       { url: "/icon-512.png", sizes: "512x512", type: "image/png" },
     ],
-    shortcut: "/favicon.svg",
+    shortcut: "/icon-256.png",
     apple: "/icon-512.png",
   },
   openGraph: {
