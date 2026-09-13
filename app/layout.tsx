@@ -11,7 +11,15 @@ export const metadata: Metadata = {
   title: "NAYMA — Enterprise AI systems, thoughtfully built.",
   description:
     "NAYMA builds enterprise infrastructure and AI-native software for governing traffic, understanding relationships, and automating operations.",
-  icons: { icon: "favicon.svg", shortcut: "favicon.svg" },
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/icon-256.png", sizes: "256x256", type: "image/png" },
+      { url: "/icon-512.png", sizes: "512x512", type: "image/png" },
+    ],
+    shortcut: "/favicon.svg",
+    apple: "/icon-512.png",
+  },
   openGraph: {
     title: "NAYMA — Enterprise AI systems, thoughtfully built.",
     description: "Enterprise infrastructure and AI-native software from NAYMA.",
