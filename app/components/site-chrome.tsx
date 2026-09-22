@@ -10,7 +10,7 @@ export function SiteHeader() {
     <nav className="nav shell" aria-label="Primary navigation">
       <Link href="/" className="brand" aria-label="NAYMA home"><BrandMark />NAYMA<span className="brand-dot">.</span></Link>
       <div className="nav-links">
-        <Link href="/#products">Products</Link><Link href="/#approach">Approach</Link><Link href="/#about">About</Link>
+        <Link href="/#products">Products</Link><Link href="/#solutions">Solutions</Link><Link href="/#approach">Approach</Link><Link href="/#about">About</Link>
       </div>
       <Link className="nav-cta" href="/contact">Talk to us <span>↗</span></Link>
     </nav>

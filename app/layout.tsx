@@ -8,9 +8,9 @@ export const metadata: Metadata = {
   metadataBase: new URL(
     process.env.GITHUB_ACTIONS ? "https://nayma.ai" : "http://localhost:3000",
   ),
-  title: "NAYMA — Enterprise AI systems, thoughtfully built.",
+  title: "NAYMA — Products. Platforms. Intelligence.",
   description:
-    "NAYMA builds enterprise infrastructure and AI-native software for governing traffic, understanding relationships, and automating operations.",
+    "NAYMA builds technology for the AI era—from enterprise platforms and SaaS products to AI agents, models, and intelligent systems.",
   icons: {
     icon: [
       { url: "/icon-256.png", sizes: "256x256", type: "image/png" },
@@ -20,14 +20,14 @@ export const metadata: Metadata = {
     apple: "/icon-512.png",
   },
   openGraph: {
-    title: "NAYMA — Enterprise AI systems, thoughtfully built.",
-    description: "Enterprise infrastructure and AI-native software from NAYMA.",
+    title: "NAYMA — Products. Platforms. Intelligence.",
+    description: "NAYMA builds technology for the AI era—from enterprise platforms and SaaS products to AI agents, models, and intelligent systems.",
     images: [{ url: "/og.png", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "NAYMA — Enterprise AI systems, thoughtfully built.",
-    description: "Enterprise infrastructure and AI-native software from NAYMA.",
+    title: "NAYMA — Products. Platforms. Intelligence.",
+    description: "NAYMA builds technology for the AI era—from enterprise platforms and SaaS products to AI agents, models, and intelligent systems.",
     images: ["/og.png"],
   },
 };

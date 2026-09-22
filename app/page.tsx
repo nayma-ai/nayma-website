@@ -12,11 +12,11 @@ const products = [
     key: "wasl",
     number: "01",
     name: "WASL",
-    eyebrow: "Infrastructure · AI/API/event/worker gateway",
+    eyebrow: "Infrastructure · AI/MCP/API/event/worker gateway",
     headline: "One gateway. Every kind of enterprise traffic.",
     description:
-      "A unified gateway for APIs, AI requests, events, and background workers—with one layer for policy, security, deployment, and observability.",
-    capabilities: ["API Gateway", "AI Gateway", "Event Gateway", "Worker Platform"],
+      "A unified gateway for APIs, AI requests, MCP tools, events, and background workers—with one layer for policy, security, deployment, and observability.",
+    capabilities: ["API Gateway", "AI Gateway", "MCP Gateway", "Event Gateway", "Worker Platform"],
     audience: "Platform, API & AI infrastructure teams",
     actions: [
       { label: "Visit WASL", href: "https://waslhq.com", external: true },
@@ -33,10 +33,7 @@ const products = [
       "An AI-native CRM that turns conversations, activity, and relationship signals into shared context and useful next actions—not endless administration.",
     capabilities: ["Relationship Intelligence", "Activity Capture", "Deal Context", "AI Assistance"],
     audience: "Sales, founders & relationship-led teams",
-    actions: [
-      { label: "Visit Relaya", href: "https://relayahq.com", external: true },
-      { label: "Open the app", href: "https://app.relayahq.com/login", external: true },
-    ],
+    actions: [{ label: "Visit Relaya", href: "https://relayahq.com", external: true }],
   },
   {
     key: "qayro",
@@ -74,43 +71,83 @@ const products = [
     audience: "Talent, recruiting & hiring teams",
     actions: [{ label: "Visit Rolwise", href: "https://rolwise.com", external: true }],
   },
+  {
+    key: "nurae",
+    number: "06",
+    name: "NURAE",
+    eyebrow: "AI customer agents · Multilingual support automation",
+    headline: "Customer agents that answer from your knowledge, in your customer's language.",
+    description:
+      "AI customer agents that answer from your own knowledge, cite their sources, and hand off to your team when it matters—multilingual, actionable, and live on your site in minutes.",
+    capabilities: ["Grounded Answers", "Multilingual Support", "Human Handoff", "Business Actions"],
+    audience: "Support, sales & customer-facing teams",
+    actions: [{ label: "Visit Nurae", href: "https://nurae.ai", external: true }],
+  },
+];
+
+const enterpriseSolutions = [
+  {
+    key: "agents",
+    number: "01",
+    name: "AI Agents",
+    copy: "Design and ship production AI agents—tool use, orchestration, and human-in-the-loop control built around your own systems and data.",
+  },
+  {
+    key: "private-ai",
+    number: "02",
+    name: "Private AI",
+    copy: "Deploy models and agents inside your own infrastructure, so sensitive data never leaves environments you control—on-premises or air-gapped.",
+  },
+  {
+    key: "finetuning",
+    number: "03",
+    name: "Model Fine-tuning",
+    copy: "Finetune and evaluate models on your own data, so outputs match your domain, tone, and accuracy requirements out of the box.",
+  },
+  {
+    key: "integration",
+    number: "04",
+    name: "Integration",
+    copy: "Connect NAYMA products and custom AI systems into the tools you already run—ERPs, CRMs, identity, and data platforms—through governed APIs and event flows.",
+  },
+  {
+    key: "ai-engineering",
+    number: "05",
+    name: "AI Engineering",
+    copy: "Hands-on engineering and implementation support—from architecture and evaluation to production rollout—for teams building AI into how they operate.",
+  },
 ];
 
 const principles = [
   ["Independently built", "An independent product company building for teams operating across regions, globally."],
-  ["Enterprise-first", "Security, governance, integration, and deployment control are product foundations—not later additions."],
+  ["Scales with you", "The same security, governance, and deployment control from a solo developer's first integration through enterprise rollout."],
   ["API-first", "Clear interfaces help every product fit the systems an organization already depends on."],
   ["AI-native", "AI is applied where it can reason over context and reduce operational work, with evidence and human control."],
   ["Privacy-first", "Data boundaries, access controls, and responsible handling shape the architecture from the beginning."],
 ];
 
-const architectureLayers = [
+const modelStack = [
   {
-    key: "wasl",
-    label: "Govern traffic",
-    name: "WASL",
-    copy: "Route and govern APIs, AI requests, events, and workers through one control plane.",
+    key: "generative",
+    label: "Open-ended reasoning & generation",
+    name: "Generative models",
+    copy: "Large language models draft, summarize, and converse—writing Rolwise's outreach, answering Nurae's customer questions from your own knowledge, and turning Qayro's documents into structured context.",
   },
   {
-    key: "relaya",
-    label: "Establish context",
-    name: "RELAYA",
-    copy: "Turn relationship activity into a useful memory that teams can act on and explain.",
-  },
-  {
-    key: "qayro",
-    label: "Automate decisions",
-    name: "QAYRO",
-    copy: "Move documents and approvals through governed workflows while keeping exceptions visible.",
+    key: "system-one",
+    label: "Fast, typed, calibrated judgments",
+    name: "System One models",
+    copy: "Purpose-built models like Jev, from TypeSafe, return typed answers and calibrated probabilities instead of free text. Rolwise's AI Fit Scoring runs on Jev—ranking every candidate against a role's criteria at a fraction of the cost and latency of a generative call.",
   },
 ];
 
 const useCases = [
-  ["Platform teams", "Govern API, AI, event, and worker traffic through one control plane.", "WASL"],
+  ["Platform teams", "Govern API, AI, MCP, event, and worker traffic through one control plane.", "WASL"],
   ["Revenue teams", "Turn customer conversations into shared context and next actions.", "RELAYA"],
   ["Finance & procurement", "Move invoices and approvals through governed automation.", "QAYRO"],
   ["Product & engineering teams", "Send transactional email with typed SDKs and delivery visibility.", "NIDA"],
   ["Talent & recruiting teams", "Source, score, and move candidates with AI agents in the loop.", "ROLWISE"],
+  ["Support & CX teams", "Answer customers from your own knowledge, in their language, with human handoff.", "NURAE"],
 ];
 
 function ProductVisual({ type }: { type: string }) {
@@ -151,6 +188,13 @@ function ProductVisual({ type }: { type: string }) {
           <span className="visual-label">SOURCE → SCORE → HIRE</span>
         </>
       )}
+      {type === "nurae" && (
+        <>
+          <span className="bubble b1">EN</span><span className="bubble b2">AR</span><span className="bubble b3">✓</span>
+          <span className="cite-line" />
+          <span className="visual-label">ASK → CITE → RESOLVE</span>
+        </>
+      )}
     </div>
   );
 }
@@ -169,19 +213,19 @@ export default function Home() {
       <SiteHeader />
 
       <section className="hero shell" id="top">
-        <div className="hero-kicker"><span>Independent enterprise software company</span><span>Global</span></div>
+        <div className="hero-kicker"><span>Independent software company</span><span>Global</span></div>
         <div className="hero-title-wrap">
-          <h1>NAYMA builds<br /><em>enterprise AI</em> systems.</h1>
+          <h1>Products. Platforms.<br /><em>Intelligence.</em></h1>
           <div className="hero-mark" aria-hidden="true"><span /><span /><span /></div>
         </div>
         <div className="hero-bottom">
-          <p>Infrastructure and AI-native software for enterprise teams that need to govern traffic, understand relationships, and automate operations.</p>
+          <p>NAYMA builds technology for the AI era—from enterprise platforms and SaaS products to AI agents, models, and intelligent systems.</p>
           <div className="hero-actions">
             <Link href="/contact" className="text-link">Talk to NAYMA <span>↗</span></Link>
             <a href="#products" className="text-link">Explore products <span>↓</span></a>
           </div>
           <div className="credibility-rail" aria-label="NAYMA commitments">
-            <span>Independently built</span><span>Enterprise-first</span><span>API-first</span><span>AI-native</span><span>Privacy-first</span>
+            <span>Independently built</span><span>Scales with you</span><span>API-first</span><span>AI-native</span><span>Privacy-first</span>
           </div>
         </div>
       </section>
@@ -189,13 +233,13 @@ export default function Home() {
       <section className="statement">
         <div className="shell statement-grid">
           <p className="section-label">Our point of view</p>
-          <h2>Enterprise AI,<br /><span>with a clear path</span> to action.</h2>
-          <p className="statement-copy">NAYMA builds focused products around the infrastructure, context, and workflows enterprises need to adopt AI responsibly.</p>
+          <h2>Two sides,<br /><span>one standard.</span></h2>
+          <p className="statement-copy">NAYMA ships focused SaaS products—and delivers the enterprise capabilities behind them: AI agents, private model deployment, fine-tuning, integration, and hands-on AI engineering.</p>
         </div>
       </section>
 
       <section className="products shell" id="products">
-        <div className="section-head"><p className="section-label">Five enterprise products</p><p>One shared engineering foundation.</p></div>
+        <div className="section-head"><p className="section-label">Products</p><p>Six SaaS products, one shared engineering foundation.</p></div>
         {products.map((product) => (
           <article className={`product product-${product.key}`} id={product.key} key={product.key}>
             <div className="product-meta"><span>{product.number}</span><p>{product.eyebrow}</p></div>
@@ -212,24 +256,32 @@ export default function Home() {
         ))}
       </section>
 
-      <section className="architecture" id="architecture">
-        <div className="shell architecture-grid">
-          <div className="architecture-lead">
-            <p className="section-label">Technical architecture</p>
-            <h2>Governed systems, connected end to end.</h2>
-            <p>Enterprise adoption depends on the path between systems: how traffic is governed, how context is established, how decisions are explained, and where people remain in control.</p>
-            <Link className="architecture-link" href="/contact">Review an architecture requirement <span aria-hidden="true">→</span></Link>
-          </div>
-          <div className="architecture-flow" aria-label="NAYMA architecture layers">
-            {architectureLayers.map((layer, index) => (
-              <article className={`architecture-step architecture-step-${layer.key}`} key={layer.name}>
-                <span className="architecture-number">0{index + 1}</span>
-                <div><p>{layer.label}</p><h3>{layer.name}</h3><span>{layer.copy}</span></div>
-              </article>
-            ))}
-            <div className="architecture-foundation"><span>Shared foundation</span><strong>Identity · Governance · Integration · Evidence</strong></div>
-          </div>
+      <section className="services shell" id="solutions">
+        <div className="section-head"><p className="section-label">Enterprise solutions</p><p>Built alongside your team, not handed off.</p></div>
+        <div className="service-list">
+          {enterpriseSolutions.map((service) => (
+            <article key={service.key}>
+              <span>{service.number}</span>
+              <h3>{service.name}</h3>
+              <p>{service.copy}</p>
+            </article>
+          ))}
         </div>
+        <Link className="services-link" href="/contact">Talk to us about an enterprise engagement <span aria-hidden="true">→</span></Link>
+      </section>
+
+      <section className="stack shell" id="technology">
+        <div className="section-head"><p className="section-label">How NAYMA applies AI</p><p>The right model for the decision.</p></div>
+        <div className="stack-list">
+          {modelStack.map((item) => (
+            <article key={item.key}>
+              <p className="stack-label">{item.label}</p>
+              <h3>{item.name}</h3>
+              <p>{item.copy}</p>
+            </article>
+          ))}
+        </div>
+        <a className="services-link" href="https://typesafe.ai" target="_blank" rel="noreferrer">Jev is built by TypeSafe <span aria-hidden="true">↗</span></a>
       </section>
 
       <section className="use-cases shell">
