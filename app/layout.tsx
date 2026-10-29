@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   ),
   title: "NAYMA — Products. Platforms. Intelligence.",
   description:
-    "NAYMA builds technology for the AI era—from enterprise platforms and SaaS products to AI agents, models, and intelligent systems.",
+    "NAYMA builds AI-powered products—SaaS platforms, developer tools, and consumer apps—plus the agents, models, and intelligence behind them.",
   icons: {
     icon: [
       { url: "/icon-256.png", sizes: "256x256", type: "image/png" },
@@ -21,13 +21,13 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "NAYMA — Products. Platforms. Intelligence.",
-    description: "NAYMA builds technology for the AI era—from enterprise platforms and SaaS products to AI agents, models, and intelligent systems.",
+    description: "NAYMA builds AI-powered products—SaaS platforms, developer tools, and consumer apps—plus the agents, models, and intelligence behind them.",
     images: [{ url: "/og.png", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
     title: "NAYMA — Products. Platforms. Intelligence.",
-    description: "NAYMA builds technology for the AI era—from enterprise platforms and SaaS products to AI agents, models, and intelligent systems.",
+    description: "NAYMA builds AI-powered products—SaaS platforms, developer tools, and consumer apps—plus the agents, models, and intelligence behind them.",
     images: ["/og.png"],
   },
 };
