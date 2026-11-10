@@ -9,19 +9,16 @@ type ProductAction = {
 
 const products = [
   {
-    key: "wasl",
+    key: "rowwise",
     number: "01",
-    name: "WASL",
-    eyebrow: "Infrastructure · AI/MCP/API/event/worker gateway",
-    headline: "One gateway. Every kind of enterprise traffic.",
+    name: "ROWWISE",
+    eyebrow: "Developer tools · Data workspace for macOS",
+    headline: "From data to answers. SQL, business context, and MCP in one workspace.",
     description:
-      "A unified gateway for APIs, AI requests, MCP tools, events, and background workers—with one layer for policy, security, deployment, and observability.",
-    capabilities: ["API Gateway", "AI Gateway", "MCP Gateway", "Event Gateway", "Worker Platform"],
-    audience: "Platform, API & AI infrastructure teams",
-    actions: [
-      { label: "Visit WASL", href: "https://waslhq.com", external: true },
-      { label: "Read documentation", href: "https://waslhq.com/docs/", external: true },
-    ],
+      "A macOS workspace that connects to 19 databases and local files, turns plain-language questions into business answers, drafts SQL with AI, and plugs coding assistants like Claude Code and Cursor into live schema and query context through a built-in MCP server.",
+    capabilities: ["Business Ask", "AI-Assisted SQL", "Built-in MCP", "19+ Connectors"],
+    audience: "Developers, analysts & data teams",
+    actions: [{ label: "Visit Rowwise", href: "https://rowwise.dev", external: true }],
   },
   {
     key: "relaya",
@@ -83,6 +80,18 @@ const products = [
     audience: "Support, sales & customer-facing teams",
     actions: [{ label: "Visit Nurae", href: "https://nurae.ai", external: true }],
   },
+  {
+    key: "leen",
+    number: "07",
+    name: "LEEN",
+    eyebrow: "Consumer app · Food journal for iPhone",
+    headline: "A calmer way to keep track of what you eat.",
+    description:
+      "Tell Leen what you ate by text, voice, or photo, and keep a beautiful, local-first journal you can return to. Leen Pro adds conversational nutrient insights—offline on your iPhone, in English and Arabic.",
+    capabilities: ["Text, Voice & Photo Logging", "Local-First Journal", "Nutrient Insights", "English & العربية"],
+    audience: "Individuals building a mindful eating habit",
+    actions: [{ label: "Visit Leen", href: "https://leen.fit", external: true }],
+  },
 ];
 
 const enterpriseSolutions = [
@@ -105,14 +114,20 @@ const enterpriseSolutions = [
     copy: "Finetune and evaluate models on your own data, so outputs match your domain, tone, and accuracy requirements out of the box.",
   },
   {
-    key: "integration",
+    key: "data-ai",
     number: "04",
+    name: "AI for Data",
+    copy: "Turn databases, documents, and files into context models can use—pipelines, retrieval, and the connectors that keep answers grounded in what's true for your business.",
+  },
+  {
+    key: "integration",
+    number: "05",
     name: "Integration",
     copy: "Connect NAYMA products and custom AI systems into the tools you already run—ERPs, CRMs, identity, and data platforms—through governed APIs and event flows.",
   },
   {
     key: "ai-engineering",
-    number: "05",
+    number: "06",
     name: "AI Engineering",
     copy: "Hands-on engineering and implementation support—from architecture and evaluation to production rollout—for teams building AI into how they operate.",
   },
@@ -131,7 +146,7 @@ const modelStack = [
     key: "generative",
     label: "Open-ended reasoning & generation",
     name: "Generative models",
-    copy: "Large language models draft, summarize, and converse—writing Rolwise's outreach, answering Nurae's customer questions from your own knowledge, and turning Qayro's documents into structured context.",
+    copy: "Large language models draft, summarize, and converse—turning a plain-language question into Rowwise's SQL, writing Rolwise's outreach, answering Nurae's customer questions from your own knowledge, structuring Qayro's documents, and logging a spoken or photographed meal in Leen.",
   },
   {
     key: "system-one",
@@ -142,22 +157,23 @@ const modelStack = [
 ];
 
 const useCases = [
-  ["Platform teams", "Govern API, AI, MCP, event, and worker traffic through one control plane.", "WASL"],
+  ["Developers & data teams", "Turn databases into plain-language answers, AI-assisted SQL, and live context for coding tools.", "ROWWISE"],
   ["Revenue teams", "Turn customer conversations into shared context and next actions.", "RELAYA"],
   ["Finance & procurement", "Move invoices and approvals through governed automation.", "QAYRO"],
   ["Product & engineering teams", "Send transactional email with typed SDKs and delivery visibility.", "NIDA"],
   ["Talent & recruiting teams", "Source, score, and move candidates with AI agents in the loop.", "ROLWISE"],
   ["Support & CX teams", "Answer customers from your own knowledge, in their language, with human handoff.", "NURAE"],
+  ["Individuals & households", "Log meals by text, voice, or photo, and keep a calm, local-first food journal.", "LEEN"],
 ];
 
 function ProductVisual({ type }: { type: string }) {
   return (
     <div className={`product-visual visual-${type}`} aria-hidden="true">
-      {type === "wasl" && (
+      {type === "rowwise" && (
         <>
           <span className="node n1" /><span className="node n2" /><span className="node n3" />
           <span className="route r1" /><span className="route r2" /><span className="route r3" />
-          <span className="visual-label">CONTROL PLANE</span>
+          <span className="visual-label">CONNECT → ASK → ANSWER</span>
         </>
       )}
       {type === "relaya" && (
@@ -195,6 +211,13 @@ function ProductVisual({ type }: { type: string }) {
           <span className="visual-label">ASK → CITE → RESOLVE</span>
         </>
       )}
+      {type === "leen" && (
+        <>
+          <span className="meal m1">🍛</span><span className="meal m2">🎙</span><span className="meal m3">📷</span>
+          <span className="log-track" />
+          <span className="visual-label">TYPE → SAY → SNAP</span>
+        </>
+      )}
     </div>
   );
 }
@@ -219,7 +242,7 @@ export default function Home() {
           <div className="hero-mark" aria-hidden="true"><span /><span /><span /></div>
         </div>
         <div className="hero-bottom">
-          <p>NAYMA builds technology for the AI era—from enterprise platforms and SaaS products to AI agents, models, and intelligent systems.</p>
+          <p>NAYMA builds AI-powered products—SaaS platforms, developer tools, and consumer apps—plus the agents, models, and intelligence behind them.</p>
           <div className="hero-actions">
             <Link href="/contact" className="text-link">Talk to NAYMA <span>↗</span></Link>
             <a href="#products" className="text-link">Explore products <span>↓</span></a>
@@ -234,12 +257,12 @@ export default function Home() {
         <div className="shell statement-grid">
           <p className="section-label">Our point of view</p>
           <h2>Two sides,<br /><span>one standard.</span></h2>
-          <p className="statement-copy">NAYMA ships focused SaaS products—and delivers the enterprise capabilities behind them: AI agents, private model deployment, fine-tuning, integration, and hands-on AI engineering.</p>
+          <p className="statement-copy">NAYMA ships focused products—across SaaS, developer tools, and consumer apps—and delivers the AI capabilities behind them: agents, private model deployment, fine-tuning, data, integration, and hands-on engineering.</p>
         </div>
       </section>
 
       <section className="products shell" id="products">
-        <div className="section-head"><p className="section-label">Products</p><p>Six SaaS products, one shared engineering foundation.</p></div>
+        <div className="section-head"><p className="section-label">Products</p><p>Seven products, from enterprise platforms to the apps people use every day.</p></div>
         {products.map((product) => (
           <article className={`product product-${product.key}`} id={product.key} key={product.key}>
             <div className="product-meta"><span>{product.number}</span><p>{product.eyebrow}</p></div>
@@ -306,7 +329,7 @@ export default function Home() {
         <div className="engineering-grid">
           <div className="engineering-lead"><p className="section-label">Engineering / resources</p><h2>Inspect the work behind the products.</h2><p>Architecture, documentation, and public technical work make our decisions easier for the teams expected to trust them.</p></div>
           <div className="resource-index">
-            <a href="https://waslhq.com/docs/" target="_blank" rel="noreferrer"><span>Documentation</span><strong>WASL platform and gateway docs</strong><b aria-hidden="true">↗</b></a>
+            <a href="https://rowwise.dev" target="_blank" rel="noreferrer"><span>Documentation</span><strong>Rowwise data workspace & built-in MCP</strong><b aria-hidden="true">↗</b></a>
             <Link href="/roadmap"><span>Roadmap</span><strong>Product direction across the NAYMA ecosystem</strong><b aria-hidden="true">→</b></Link>
             <a href="https://github.com/nayma-ai" target="_blank" rel="noreferrer"><span>GitHub</span><strong>NAYMA repositories and engineering work</strong><b aria-hidden="true">↗</b></a>
             <Link href="/contact"><span>Contact</span><strong>Review requirements with the product team</strong><b aria-hidden="true">→</b></Link>
@@ -320,7 +343,7 @@ export default function Home() {
       </section>
 
       <section className="future">
-        <div className="shell future-grid"><p className="section-label">Built for the new enterprise</p><div><h2>Govern the path from request to decision.</h2><p>WASL governs the traffic, Relaya carries the context, and Qayro automates the workflow. Together, they make enterprise systems easier to operate and easier to trust.</p></div></div>
+        <div className="shell future-grid"><p className="section-label">Built for the new enterprise</p><div><h2>Ship the product. Power the platform.</h2><p>Rowwise turns data into answers, Relaya carries the context, and Qayro automates the workflow. Together, they make everyday operations easier to run and easier to trust.</p></div></div>
       </section>
 
       <section className="contact shell" id="contact">
